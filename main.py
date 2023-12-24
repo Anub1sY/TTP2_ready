@@ -1,4 +1,6 @@
-# import sth
+import Task1
+import Task7
+import Task9
 
 
 def menu():
@@ -12,13 +14,13 @@ def menu():
         menu_point = input('Выберите пункт меню: ')
 
         if menu_point == '1':
-            pass
+            Task1.start_task1()
 
         elif menu_point == '2':
-            pass
+            Task7.start_task7()
 
         elif menu_point == '3':
-            pass
+            Task9.start_task9()
 
         elif menu_point == '4':
             print('Выход из программы.')
