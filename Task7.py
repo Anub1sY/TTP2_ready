@@ -14,7 +14,16 @@ def distance(point1, point2):
 
 
 def add_nearest_points(points):
-    return 0
+    """
+    Функция принимает список точек в качестве аргумента,
+    в котором каждая точка будет добавлена к координатам ближайшей другой точки
+    :param points: Список точек
+    :return: Возвращает новый список точек
+    """
+    return [(point[0] + min((p for p in points if p != point),
+            key=lambda p: distance(point, p))[0],
+            point[1] + min((p for p in points if p != point),
+            key=lambda p: distance(point, p))[1]) for point in points]
 
 
 def input_points():
