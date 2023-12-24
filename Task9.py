@@ -47,7 +47,12 @@ def input_points(text):
 
 
 def output_points(points):
-    pass
+    """
+    Функция вывода точек на экран
+    :param points: список точек
+    """
+    for point in points:
+        print(f"({point[0]}, {point[1]})")
 
 
 def start_task9():
