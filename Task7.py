@@ -27,7 +27,22 @@ def add_nearest_points(points):
 
 
 def input_points():
-    return 0
+    """
+    Функция ввода точек на двумерной плоскости
+    :return: Возвращает список точек
+    """
+    num_points = int(input('Введите количество точек: '))
+    points = []
+    while True:
+        for i in range(num_points):
+            try:
+                x = int(input(f'Введите x-координату точки {i + 1}: '))
+                y = int(input(f'Введите y-координату точки {i + 1}: '))
+                points.append((x, y))
+            except ValueError:
+                print('Ошибка ввода. Попробуйте снова')
+                return None
+        return points
 
 
 def generate_points(num_points):
