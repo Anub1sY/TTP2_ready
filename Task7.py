@@ -71,4 +71,53 @@ def output_points(points):
 
 
 def start_task7():
-    pass
+    points = []
+
+    while True:
+        print('Меню задания 1:'
+              '\n1. Условие задачи'
+              '\n2. Ввести массивы вручную'
+              '\n3. Заполнить массивы случайными числами'
+              '\n4. Вывод результата'
+              '\n5. Выход')
+
+        menu_point = input('\nВведите пункт меню: ')
+
+        if menu_point == '1':
+            system('cls')
+            print('Входные данные: массив из точек с двумя координатами ((1, 2), (2, 3) …). '
+                  'Требуется вернуть массив, в котором к каждой точке будет прибавлена другая, ближайшая точка.')
+            system('pause')
+
+        if menu_point == '2':
+            system('cls')
+            points = input_points()
+
+            if points is not None:
+                print(f'Точки введены:')
+                output_points(points)
+                system('pause')
+
+        if menu_point == '3':
+            system('cls')
+            num_points = int(input('Введите количество точек: '))
+            points = generate_points(num_points)
+
+            print(f'Точки сгенрированы:')
+            output_points(points)
+            system('pause')
+
+        if menu_point == '4':
+            system('cls')
+            if not points:
+                print('Ошибка: Сначала введите или сгенерируйте массив.')
+                system('pause')
+            else:
+                points = add_nearest_points(points)
+                print('Результат:')
+                output_points(points)
+                system('pause')
+                system('cls')
+
+        if menu_point == '5':
+            break
