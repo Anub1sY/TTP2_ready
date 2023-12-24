@@ -28,8 +28,22 @@ def is_points_distance(array1, array2, distance):
     return result_points
 
 
-def input_points(prompt):
-    pass
+def input_points(text):
+    """
+    Функция ввода массива точек
+    :param text: Текст для рекомендации ввода
+    :return: Возвращает список точек
+    """
+    while True:
+        try:
+            string = input(text)
+            points = []
+            for point_str in string.split():
+                x, y = map(float, point_str.split(','))
+                points.append((x, y))
+            return points
+        except ValueError:
+            print('Ошибка ввода. Попробуйте снова.')
 
 
 def output_points(points):
