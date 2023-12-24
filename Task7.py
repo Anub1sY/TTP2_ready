@@ -46,7 +46,19 @@ def input_points():
 
 
 def generate_points(num_points):
-    return 0
+    """
+    Функция генерирует случайные точки на двумерной плоскости
+    :param num_points: Принимает на вход число точек, которые нужно сгенерировать
+    :return: Возвращает сгенерированный список точек
+    """
+    while True:
+        try:
+            a = int(input('Введите минимальное значение чисел: '))
+            b = int(input('Введите максимальное значение чисел: '))
+        except ValueError:
+            print('Ошибка ввода. Попробуйте снова')
+            return None
+        return [(random.randint(a, b), random.randint(a, b)) for _ in range(num_points)]
 
 
 def output_points(points):
