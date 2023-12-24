@@ -62,7 +62,12 @@ def generate_points(num_points):
 
 
 def output_points(points):
-    pass
+    """
+    Функция вывода двумерного списка
+    :param points: Принимает список значений вида (x, y)
+    """
+    for n, point in enumerate(points):
+        print(f'Точка {n + 1}: ({point[0]}, {point[1]})')
 
 
 def start_task7():
