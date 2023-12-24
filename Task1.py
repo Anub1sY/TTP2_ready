@@ -73,4 +73,67 @@ def generate_array(size):
 
 
 def start_task1():
-    pass
+    """
+        Меню задания 1 с условиями его выполнения, а также
+        пунктами с которыми можно работать.
+        :return: Меню для работы, с кнопкой выхода из него.
+        """
+
+    while True:
+        system('cls')
+        print('Меню задания 1:'
+              '\n1. Условие задачи'
+              '\n2. Ввести массивы вручную'
+              '\n3. Заполнить массивы случайными числами'
+              '\n4. Вывод результата'
+              '\n5. Выход')
+
+        menu_point = input('\nВведите пункт меню:')
+
+        if menu_point == '1':
+            print('Входные данные: 2 массива с числами одинакового размера. Нужно произвести сумму\n'
+                  'чисел из массивов, первый массив должен быть отсортирован в порядке убывания,\n'
+                  'второй в порядке возрастания. Если числа в массивах совпадают, их сумма будет равна\n'
+                  'нулю. Конечный массив нужно отсортировать в порядке возрастания.\n')
+            system('pause')
+            system('cls')
+
+        elif menu_point == '2':
+            system('cls')
+            size = int(input("Введите размер массива: "))
+            print('Первый массив:')
+            arr1 = input_array(size)
+            print('Второй массив:')
+            arr2 = input_array(size)
+            if arr1 is not None and arr2 is not None and len(arr1) == len(arr2):
+                print('Первый массив до сортировки:', arr1,
+                      '\nВторой массив до сортировки:', arr2)
+                system('pause')
+
+        elif menu_point == '3':
+            system('cls')
+            size = int(input("Введите размер массива: "))
+            arr1 = generate_array(size)
+            arr2 = generate_array(size)
+            print('Массивы заполнены автоматически,'
+                  '\nПервый массив до сортировки:', arr1,
+                  '\nВторой массив до сортировки:', arr2)
+            system('pause')
+
+        elif menu_point == '4':
+            system('cls')
+            if 'arr1' not in locals() and 'arr2' not in locals():
+                print('Ошибка: Сначала введите или сгенерируйте массивы.')
+                system('pause')
+                continue
+            result = sum_sorted_arrays(arr1, arr2)
+            print(f'Результат работы, отсортированный по возростанию {result}')
+            system('pause')
+
+        elif menu_point == '5':
+            system('cls')
+            break
+
+        else:
+            print('Ошибка ввода. Попробуйте ещё раз.')
+            system('pause')
