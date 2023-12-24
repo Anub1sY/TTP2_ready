@@ -52,7 +52,24 @@ def input_array(size):
 
 
 def generate_array(size):
-    return 0
+    """
+        Функция заполнения массива случайными значениями,
+        в диапозоне который выбираете сами.
+        :param size: Размер массива
+        :return: Возвращает готовый список или выводит ошибку ввода
+        и ничего не возвращает
+        """
+
+    while True:
+        try:
+            a = int(input('Введите минимальное значение чисел в массиве: '))
+            b = int(input('Введите максимальное значение чисел в массиве: '))
+        except ValueError:
+            print('Ошибка ввода. Попробуйте снова')
+            system('pause')
+            system('cls')
+            continue
+        return [random.randint(a, b) for _ in range(size)]
 
 
 def start_task1():
