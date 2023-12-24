@@ -81,11 +81,11 @@ def start_task9():
         menu_point = input('\nВведите пункт меню:')
 
         if menu_point == '1':
+            system('cls')
             print('\nВходные данные: 2 массива с точками и число. Требуется вывести точки из первого и' 
                   '\nвторого массивов, расстояния между которыми больше заданного числа. Расстояния' 
                   '\nсчитаются только для соответствующих чисел.')
             system('pause')
-            system('cls')
 
         elif menu_point == '2':
             array1 = input_points('Введите количество точек первого массива: ')
@@ -118,7 +118,7 @@ def start_task9():
                 system('pause')
                 continue
             else:
-                distance = float(input())
+                distance = float(input('Введите число, расстония между точками: '))
                 result = is_points_distance(array1, array2, distance)
                 print(f'Числа, подходящие под условие: {result}')
                 system('pause')
